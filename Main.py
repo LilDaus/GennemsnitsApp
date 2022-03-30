@@ -16,18 +16,18 @@ class Appen(GridLayout):
         self.add_widget(Label(text='Karakter'))
         self.e_karakter = TextInput()
         self.add_widget(self.e_karakter)
-        self.press = Button(Text = 'Tryk her')
-        self.press.bind(on_Tryk = self.Tryk_her)
+
+        self.press = Button(text = 'Click me')
+        self.press.bind(on_press = self.click_me)
         self.add_widget(self.press)
 
-    def Tryk_her(self, instance):
-        print("Elevens Navn Er"+ self.e_name.text)
-        print("Elevens Karakter" + self.e_karakter.text)
+    def click_me(self, instance):
+        print("Elevens Navn Er:"+ self.e_name.text)
+        print("Elevens Karakter:" + self.e_karakter.text)
         print("")
 
-
-class Forældre(App):
+class ItsHurting(App):
     def build(self):
         return Appen()
 if __name__ == "__main__":
-    Forældre().run()
+    ItsHurting().run()
